@@ -4,7 +4,7 @@ function getMoss() {
         .then((resp) => resp.json())
         .then(function (myJson) {
             moss = myJson;
-            console.log(moss);          
+mossFilter();        
 
         })
 
@@ -106,6 +106,7 @@ function getWiki(title) {
 }
 
 function displayPage(i) {
+    document.getElementById("wiki").innerHTML = "";
     document.getElementById("page").innerHTML = page+1;
     document.getElementById("pagetotal").innerHTML = pages;
     var title = mossList[i].Name_new;

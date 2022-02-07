@@ -1,7 +1,42 @@
+button#prev {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
 button#myBtn {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 49%;
+}
+
+button#next {
+  right: 0;
+  position: absolute;
+  top: 0;
+}
+
+h2#title {
+  text-align: center;
+}
+
+.facts span {
+  float:right;
+}
+
+.facts {
+  width:200px;
+  position: absolute;
+  right: 15px;
+  background-color: #b4fab4;
+  padding: 15px;
+}
+
+.facts > h3 {
+  font-size:16px;
+  padding:0;
+  margin:3px;
+  font-weight: 200;
 }
 
 /* The Modal (background) */
