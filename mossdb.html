@@ -7,10 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="mossparser.js"></script>
     <title>Moss Database</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="wiki" id="0">
+    <div class="prev">
+        <button id="prev" onclick="prev()">Previous</button>
+    </div>
+    <div class="next">
+        <button id="next" onclick="next()">Next</button>
+    </div>
+    <div class="pages">
+        <h3><span id="page"></span>/<span id="pagetotal"></span></h3>
+    </div>
+    <div class="facts">
+        <h2 id="title"></h2>
+        <h3>Count: <span id="count"></span></h3>
+        <h3>Length: <span id="leng"></span></h3>
+        <h3>Form: <span id="form"></span></h3>
+        <h3>pH: <span id="ph"></span></h3>
+        <h3>Light: <span id="light"></span></h3>
+        <h3>Moisture: <span id="wet"></span></h3>
+        <h3>Gemmae: <span id="gem"></span></h3>
+    </div>
+    <div class="wiki" id="wiki">
     </div>
 
 
@@ -90,7 +110,7 @@
                         <option value="Fa">Fan</option>
                         <option value="Thread">Thread</option>
                         <option value="Sc">Solitary</option>
-                        <option value="Ac">Aquatic colonial</option>                        
+                        <option value="Ac">Aquatic colonial</option>
                     </select><br>
                     <label for="LIGHT">Light:</label>
                     <select id="LIGHT" class="filterable" onchange="mossFilter()">
@@ -146,7 +166,7 @@
         </div>
 
     </div>
- 
+
 
 
     <script>
@@ -178,8 +198,15 @@
             }
         }
 
+        function prev() {
+            page--;
+            displayPage(page);
+        }
 
-
+        function next() {
+            page++;
+            displayPage(page);
+        }
 
 
     </script>

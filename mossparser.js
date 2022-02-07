@@ -35,17 +35,42 @@ function mossFilter() {
         (!wet || x.F === parseInt(wet));
       });
 
-    document.getElementById("mossNumber").innerHTML=mossList.length;
-    var title = mossList[0].Name_new;
-    console.log(title);
-    getWiki(title,0);
+      page = 0;
+      pages=mossList.length;
+    document.getElementById("mossNumber").innerHTML=pages;
+      displayPage(0);
+
+
+   
+}
+
+function displayFacts(i) {
+    let title = mossList[i].Name_new;
+    let leng = mossList[i].Len;
+    let gem = mossList[i].Gem;
+    let light = mossList[i].L;
+    let form = mossList[i].LF1;
+    let ph = mossList[i].R;
+    let wet = mossList[i].F;
+    let count = mossList[i].GBno;
+
+    document.getElementById("title").innerHTML=title;
+    document.getElementById("leng").innerHTML=leng;
+    document.getElementById("gem").innerHTML=gem;
+    document.getElementById("light").innerHTML=light;
+    document.getElementById("form").innerHTML=form;
+    document.getElementById("ph").innerHTML=ph;
+    document.getElementById("wet").innerHTML=wet;
+    document.getElementById("count").innerHTML=count;
+
+
 }
 
 // function mossMaker(i) {
 // https://commons.wikimedia.org/w/api.php?action=query&generator=images&prop=imageinfo&gimlimit=8&redirects=1t&iiprop=url&format=json&titles=
 // }
 
-function getWiki(title, i) {
+function getWiki(title) {
 
                 var regex = / /gm;
                 var str = title;
@@ -59,8 +84,8 @@ function getWiki(title, i) {
         .then(function (response) { return response.json(); })
         .then(function (response) {
             wikidata = response;
-            wikitext = wikidata.parse.text["*"];
-            console.log(wikitext);
+            console.log(wikidata);
+            wikitext = wikidata.parse.text["*"];     
             var regex = /src="/gm;
             var str = wikitext;
             var subst = `src="https:`;
@@ -71,9 +96,20 @@ function getWiki(title, i) {
             var subst2 = `target="_blank" href="https://en.wikipedia.org/wiki`;
             var result2 = str2.replace(regex2, subst2);
 
-            var nodeP = document.createElement("DIV");
-            nodeP.id = "posttext" + i;
-            document.getElementById(i).appendChild(nodeP).innerHTML = result2;
+            document.getElementById("wiki").innerHTML = result2;
+        })
+
+        .catch(function (error) {
+            console.log(error);
         });
+
+}
+
+function displayPage(i) {
+    document.getElementById("page").innerHTML = page+1;
+    document.getElementById("pagetotal").innerHTML = pages+1;
+    var title = mossList[i].Name_new;
+    displayFacts(i);
+    getWiki(title);
 
 }
