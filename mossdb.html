@@ -200,11 +200,13 @@
 
         function prev() {
             page--;
+            if (page<0) {page=pages-1;}
             displayPage(page);
         }
 
         function next() {
             page++;
+            if (page>pages-1) {page=0;}
             displayPage(page);
         }
 

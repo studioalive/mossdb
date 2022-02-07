@@ -1,6 +1,6 @@
 function getMoss() {
 
-    fetch('bryoatt1.json')
+    fetch('bryoatt2.json')
         .then((resp) => resp.json())
         .then(function (myJson) {
             moss = myJson;
@@ -107,7 +107,7 @@ function getWiki(title) {
 
 function displayPage(i) {
     document.getElementById("page").innerHTML = page+1;
-    document.getElementById("pagetotal").innerHTML = pages+1;
+    document.getElementById("pagetotal").innerHTML = pages;
     var title = mossList[i].Name_new;
     displayFacts(i);
     getWiki(title);
