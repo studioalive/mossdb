@@ -54,17 +54,32 @@ function displayFacts(i) {
     let wet = mossList[i].F;
     let count = mossList[i].GBno;
 
+    addWord("a");
     document.getElementById("title").innerHTML = title;
-    document.getElementById("leng").innerHTML = leng;
-    document.getElementById("gem").innerHTML = gem;
-    document.getElementById("light").innerHTML = light;
-    document.getElementById("form").innerHTML = form;
-    document.getElementById("ph").innerHTML = ph;
-    document.getElementById("wet").innerHTML = wet;
-    document.getElementById("count").innerHTML = count;
+    document.getElementById("count").innerHTML = count + countness(count); 
+    document.getElementById("leng").innerHTML = leng+sizeness(leng);
+    document.getElementById("light").innerHTML = light+lightness(light);
+    document.getElementById("form").innerHTML = form+formness(form);
+    document.getElementById("ph").innerHTML = ph+phness(ph);
+    document.getElementById("wet").innerHTML = wet+wetness(wet);
+    addWord("moss");
+    document.getElementById("gem").innerHTML = gem+gemmaeness(gem);
+    cleanPhrase();
+}
 
+function addWord(word) {
+    document.getElementById("phrase").innerHTML+= word + ", "; 
+}
+
+function cleanPhrase() {
+    let phrase = document.getElementById("phrase").innerHTML;   
+    let newphrase = phrase.replace(',','').slice(0, -2); 
+    let newphrase2 = newphrase.replace(', moss,',' moss');   
+    let newphrase3 = newphrase2.replace(', moss',' moss');   
+    document.getElementById("phrase").innerHTML = newphrase3;
 
 }
+
 
 function getWiki(title) {
 
@@ -98,14 +113,16 @@ function getWiki(title) {
 }
 
 function displayPage(i) {
+    document.getElementById("phrase").innerHTML ="";
     document.getElementById("wiki").innerHTML = "";
     document.getElementById("gallery").innerHTML = "";
     document.getElementById("page").innerHTML = page + 1;
     document.getElementById("pagetotal").innerHTML = pages;
     var title = mossList[i].Name_new;
     displayFacts(i);
-    getWiki(title);
+    // getWiki(title);
     getImages(title);
+    mossNames(title);
 }
 
 function underscore(title) {
@@ -118,12 +135,11 @@ function underscore(title) {
 
 function getImages(title) {
     let wiki = underscore(title);
-    var wikiurl = 'https://commons.wikimedia.org/w/api.php?action=query&generator=images&prop=imageinfo&gimlimit=9&iiurlwidth=1000&redirects=1&iiprop=url&format=json&titles=' + wiki + '&origin=*';
+    var wikiurl = 'https://commons.wikimedia.org/w/api.php?action=query&generator=images&prop=imageinfo&gimlimit=12&iiurlwidth=1000&redirects=1&iiprop=url&format=json&titles=' + wiki + '&origin=*';
     fetch(wikiurl)
         .then(function (response) { return response.json(); })
         .then(function (response) {
             images = response;
-            console.log(images);
             imageArray = findAllByKey(images, 'url');
             gallery(imageArray);
         })
@@ -163,7 +179,7 @@ function openImage(id) {
     modalImg.src = oldsrc;
     modalImg.dataset.number = id;
     var span = document.getElementsByClassName("imageModalclose")[0];
- 
+
     span.onclick = function () {
         imageModal.style.display = "none";
     }
@@ -172,13 +188,84 @@ function openImage(id) {
 function nextImage() {
     var imageNumber = document.getElementById("modalImage");
     var next = parseInt(imageNumber.dataset.number) + 1;
-    if (next > 8) {next = 0;}
+    if (next > 11) { next = 0; }
     openImage(next);
 }
 
 function prevImage() {
     var imageNumber = document.getElementById("modalImage");
     var prev = parseInt(imageNumber.dataset.number) - 1;
-    if (prev < 0) {prev = 8;}
+    if (prev < 0) { prev = 11; }
     openImage(prev);
+}
+
+function sizeness(x) {
+    x = parseInt(x*1);
+
+    if (x < 5) { word = "tiny"; addWord('tiny'); } else
+        if (x < 10) { word = "small"; } else
+            if (x < 50) { word = "medium-sized"; } else
+                if (x < 100) { word = "large"; } else { word = "very large"; addWord('rambling'); }
+    return word;
+}
+
+function countness(x) { 
+    x = parseInt(x*1);
+    if (x < 5) { word = "very rare"; addWord('rare'); } else
+        if (x < 10) { word = "rare"; } else
+            if (x < 50) { word = "uncommon"; } else
+                if (x < 200) { word = "common"; } else { word = "very common"; addWord('very common'); }
+    return word;
+}
+
+function wetness(x) {
+    x = parseInt(x*1);
+
+    if (x < 3) { word = "arid";addWord('very dry') } else
+        if (x < 5) { word = "dry"; } else
+            if (x < 8) { word = "wet"; } else { word = "sodden"; addWord('very wet')}
+    return word;
+}
+
+function phness(x) {
+    x = parseInt(x*1);
+    if (x < 3) { word = "very acidic"; addWord('acid-loving'); } else
+        if (x < 7) { word = "acidic"; } else 
+        if (x < 9) { word = "alkaline"; } else 
+        { word = "very alkaline"; addWord('alkaline-loving'); }
+    return word;
+}
+
+function lightness(x) {
+    x = parseInt(x*1);
+    if (x < 1) { word = "total darkness"; addWord('grows in total darkness'); } else
+        if (x < 3) { word = "dark"; } else
+            if (x < 5) { word = "shade"; } else
+                if (x < 8) { word = "semi-sunshine"; } else { word = "direct sunlight"; addWord('sun-loving'); }
+    return word;
+}
+
+function gemmaeness(x) {
+    if (x === "F") { word = "frequent"; addWord('with gemmae often found on its leaves'); } else
+        if (x === "O") { word = "occasional"; } else 
+        if (x === "R") { word = "occasional"; } else { word = ""; }
+    return word;
+}
+
+function formness(x) {
+
+}
+
+function mossNames(latin) {
+    fetch('names.json')
+    .then((resp) => resp.json())
+    .then(function (myJson) {
+        common = myJson;
+       commonname =  common.find(x => x.latin === latin).english;
+       document.getElementById("common").innerHTML = commonname;      
+})
+
+.catch(function (error) {
+    console.log(error);
+});
 }
