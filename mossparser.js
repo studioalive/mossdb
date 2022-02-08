@@ -66,25 +66,17 @@ function displayFacts(i) {
 
 }
 
-// function mossMaker(i) {
-// https://commons.wikimedia.org/w/api.php?action=query&generator=images&prop=imageinfo&gimlimit=8&redirects=1t&iiprop=url&format=json&titles=
-// }
-
 function getWiki(title) {
 
-                var regex = / /gm;
-                var str = title;
-                var subst = `_`;
-                var wiki = str.replace(regex, subst);
+    let wiki = underscore(title);
 
     var apiEndpoint = "https://en.wikipedia.org/w/api.php";
     var params = "action=parse&format=json&page=" + wiki;
-
-    fetch(apiEndpoint + "?" + params + "&origin=*")
+    var wikiurl = apiEndpoint + "?" + params + "&origin=*";
+    fetch(wikiurl)
         .then(function (response) { return response.json(); })
         .then(function (response) {
             wikidata = response;
-            console.log(wikidata);
             wikitext = wikidata.parse.text["*"];     
             var regex = /src="/gm;
             var str = wikitext;
@@ -107,10 +99,54 @@ function getWiki(title) {
 
 function displayPage(i) {
     document.getElementById("wiki").innerHTML = "";
+    document.getElementById("gallery").innerHTML = "";
     document.getElementById("page").innerHTML = page+1;
     document.getElementById("pagetotal").innerHTML = pages;
     var title = mossList[i].Name_new;
     displayFacts(i);
     getWiki(title);
-
+    getImages(title);
 }
+
+function underscore(title) {
+    var regex = / /gm;
+    var str = title;
+    var subst = `_`;
+    return str.replace(regex, subst);
+}
+
+
+function getImages(title) {
+    let wiki = underscore(title);
+    var wikiurl = 'https://commons.wikimedia.org/w/api.php?action=query&generator=images&prop=imageinfo&gimlimit=9&redirects=1&iiprop=url&format=json&titles='+wiki+'&origin=*';
+    fetch(wikiurl)
+        .then(function (response) { return response.json(); })
+        .then(function (response) {
+            images = response;
+            imageArray = findAllByKey(images, 'url');
+            gallery(imageArray);
+        })
+
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+function findAllByKey(obj, keyToFind) {
+    return Object.entries(obj)
+      .reduce((acc, [key, value]) => (key === keyToFind)
+        ? acc.concat(value)
+        : (typeof value === 'object')
+        ? acc.concat(findAllByKey(value, keyToFind))
+        : acc
+      , [])
+  }
+
+  function gallery(array) {
+    for (i = 0; i < array.length; i++) {
+        var imagenode = document.createElement("IMG");   
+        imagenode.id = "galleryimage";
+                    document.getElementById('gallery').appendChild(imagenode).setAttribute('src',array[i]);
+    }
+
+  }
