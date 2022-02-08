@@ -4,7 +4,7 @@ function getMoss() {
         .then((resp) => resp.json())
         .then(function (myJson) {
             moss = myJson;
-mossFilter();        
+            mossFilter();
 
         })
 
@@ -24,24 +24,24 @@ function mossFilter() {
     var wet = document.getElementById("WET").value;
     var gem = document.getElementById("GEM").value;
 
-    mossList = moss.filter((x) => { 
-        return (!ord || x.Ord === ord) && 
-        (!habitat || x[habitat] > 2) && 
-        (!leng || x.Len === leng) &&
-        (!gem || x.Gem === gem) &&
-       (!light || x.L === parseInt(light)) &&
-        (!form || x.LF1 === form) &&
-        (!ph || x.R === parseInt(ph)) &&
-        (!wet || x.F === parseInt(wet));
-      });
+    mossList = moss.filter((x) => {
+        return (!ord || x.Ord === ord) &&
+            (!habitat || x[habitat] > 2) &&
+            (!leng || x.Len === leng) &&
+            (!gem || x.Gem === gem) &&
+            (!light || x.L === parseInt(light)) &&
+            (!form || x.LF1 === form) &&
+            (!ph || x.R === parseInt(ph)) &&
+            (!wet || x.F === parseInt(wet));
+    });
 
-      page = 0;
-      pages=mossList.length;
-    document.getElementById("mossNumber").innerHTML=pages;
-      displayPage(0);
+    page = 0;
+    pages = mossList.length;
+    document.getElementById("mossNumber").innerHTML = pages;
+    displayPage(0);
 
 
-   
+
 }
 
 function displayFacts(i) {
@@ -54,14 +54,14 @@ function displayFacts(i) {
     let wet = mossList[i].F;
     let count = mossList[i].GBno;
 
-    document.getElementById("title").innerHTML=title;
-    document.getElementById("leng").innerHTML=leng;
-    document.getElementById("gem").innerHTML=gem;
-    document.getElementById("light").innerHTML=light;
-    document.getElementById("form").innerHTML=form;
-    document.getElementById("ph").innerHTML=ph;
-    document.getElementById("wet").innerHTML=wet;
-    document.getElementById("count").innerHTML=count;
+    document.getElementById("title").innerHTML = title;
+    document.getElementById("leng").innerHTML = leng;
+    document.getElementById("gem").innerHTML = gem;
+    document.getElementById("light").innerHTML = light;
+    document.getElementById("form").innerHTML = form;
+    document.getElementById("ph").innerHTML = ph;
+    document.getElementById("wet").innerHTML = wet;
+    document.getElementById("count").innerHTML = count;
 
 
 }
@@ -77,7 +77,7 @@ function getWiki(title) {
         .then(function (response) { return response.json(); })
         .then(function (response) {
             wikidata = response;
-            wikitext = wikidata.parse.text["*"];     
+            wikitext = wikidata.parse.text["*"];
             var regex = /src="/gm;
             var str = wikitext;
             var subst = `src="https:`;
@@ -100,7 +100,7 @@ function getWiki(title) {
 function displayPage(i) {
     document.getElementById("wiki").innerHTML = "";
     document.getElementById("gallery").innerHTML = "";
-    document.getElementById("page").innerHTML = page+1;
+    document.getElementById("page").innerHTML = page + 1;
     document.getElementById("pagetotal").innerHTML = pages;
     var title = mossList[i].Name_new;
     displayFacts(i);
@@ -118,11 +118,12 @@ function underscore(title) {
 
 function getImages(title) {
     let wiki = underscore(title);
-    var wikiurl = 'https://commons.wikimedia.org/w/api.php?action=query&generator=images&prop=imageinfo&gimlimit=9&redirects=1&iiprop=url&format=json&titles='+wiki+'&origin=*';
+    var wikiurl = 'https://commons.wikimedia.org/w/api.php?action=query&generator=images&prop=imageinfo&gimlimit=9&iiurlwidth=1000&redirects=1&iiprop=url&format=json&titles=' + wiki + '&origin=*';
     fetch(wikiurl)
         .then(function (response) { return response.json(); })
         .then(function (response) {
             images = response;
+            console.log(images);
             imageArray = findAllByKey(images, 'url');
             gallery(imageArray);
         })
@@ -134,19 +135,50 @@ function getImages(title) {
 
 function findAllByKey(obj, keyToFind) {
     return Object.entries(obj)
-      .reduce((acc, [key, value]) => (key === keyToFind)
-        ? acc.concat(value)
-        : (typeof value === 'object')
-        ? acc.concat(findAllByKey(value, keyToFind))
-        : acc
-      , [])
-  }
+        .reduce((acc, [key, value]) => (key === keyToFind)
+            ? acc.concat(value)
+            : (typeof value === 'object')
+                ? acc.concat(findAllByKey(value, keyToFind))
+                : acc
+            , [])
+}
 
-  function gallery(array) {
+function gallery(array) {
     for (i = 0; i < array.length; i++) {
-        var imagenode = document.createElement("IMG");   
-        imagenode.id = "galleryimage";
-                    document.getElementById('gallery').appendChild(imagenode).setAttribute('src',array[i]);
+        var imagenode = document.createElement("IMG");
+        imagenode.setAttribute("onclick", "openImage(" + i + ")");
+        imagenode.className = "galleryimage";
+        imagenode.id = "galleryimage" + i;
+        document.getElementById('gallery').appendChild(imagenode).setAttribute('src', array[i]);
     }
 
-  }
+}
+
+function openImage(id) {
+    var imageModal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("modalImage");
+
+    imageModal.style.display = "block";
+    oldsrc = document.getElementById("galleryimage" + id).src;
+    modalImg.src = oldsrc;
+    modalImg.dataset.number = id;
+    var span = document.getElementsByClassName("imageModalclose")[0];
+ 
+    span.onclick = function () {
+        imageModal.style.display = "none";
+    }
+}
+
+function nextImage() {
+    var imageNumber = document.getElementById("modalImage");
+    var next = parseInt(imageNumber.dataset.number) + 1;
+    if (next > 8) {next = 0;}
+    openImage(next);
+}
+
+function prevImage() {
+    var imageNumber = document.getElementById("modalImage");
+    var prev = parseInt(imageNumber.dataset.number) - 1;
+    if (prev < 0) {prev = 8;}
+    openImage(prev);
+}
