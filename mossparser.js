@@ -43,7 +43,7 @@ function mossFilter() {
 }
 
 function displayPage(i) {
-    document.getElementById("phrase").innerHTML ="";
+    // document.getElementById("phrase").innerHTML ="";
     document.getElementById("wiki").innerHTML = "";
     document.getElementById("gallery").innerHTML = "";
     document.getElementById("page").innerHTML = page + 1;
@@ -65,29 +65,86 @@ function displayFacts(i) {
     let ph = mossList[i].R;
     let wet = mossList[i].F;
     let count = mossList[i].GBno;
+    let type = mossList[i].ML;
 
-    addWord("a");
+    let hablist = [];
+
+    let soil = mossList[i].SO;
+    let rock = mossList[i].SR;
+    let rockhard = mossList[i].RH;
+    let rocksoft = mossList[i].RS;
+    let rockworked = mossList[i].RW;
+    let trees = mossList[i].EW;
+    let plants = mossList[i].EN;
+    let gravelsand = mossList[i].GS;
+    let peat = mossList[i].PT;
+    let hollowwood = mossList[i].DW;
+    let rottingv = mossList[i].DV;
+    let rottinga = mossList[i].DA;
+    let bryo = mossList[i].BR;
+    let floating = mossList[i].AQ;
+
+    if (soil > 2) { hablist.push('soil'); }
+    if (rock > 2) { hablist.push('rock'); }
+    if (rockhard > 2) { hablist.push('hard rock'); }
+    if (rocksoft > 2) { hablist.push('soft rock'); }
+    if (rockworked > 2) { hablist.push('rocks in quarries'); }
+    if (trees > 2) { hablist.push('trees'); }
+    if (plants > 2) { hablist.push('plants'); }
+    if (gravelsand > 2) { hablist.push('sand and gravel'); }
+    if (peat > 2) { hablist.push('peat'); }
+    if (hollowwood > 2) { hablist.push('hollow wood'); }
+    if (rottingv > 2) { hablist.push('rotting vegetation'); }
+    if (rottinga > 2) { hablist.push('rotting animals'); }
+    if (bryo > 2) { hablist.push('other bryophytes'); }
+    if (floating > 2) { hablist.push('water'); }
+
+    // habitatArray['soil'] = soil;
+    // habitatArray['rock'] = rock;
+    // habitatArray['rockhard'] = rockhard;
+    // habitatArray['rocksoft'] = rocksoft;
+    // habitatArray['rockworked'] = rockworked;
+    // habitatArray['trees'] = trees;
+    // habitatArray['plants'] = plants;
+    // habitatArray['gravelsand'] = gravelsand;
+    // habitatArray['peat'] = peat;
+    // habitatArray['hollowwood'] = hollowwood;
+    // habitatArray['rottingv'] = rottingv;
+    // habitatArray['rottinga'] = rottinga;
+    // habitatArray['bryo'] = bryo;
+    // habitatArray['floating'] = floating;
+
+    // console.log(habitatArray);
+
+    // habitatArray.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+
+
+
+
     document.getElementById("title").innerHTML = title;
-    document.getElementById("count").innerHTML = count + countness(count); 
-    document.getElementById("leng").innerHTML = leng+sizeness(leng);
-    document.getElementById("light").innerHTML = light+lightness(light);
-    document.getElementById("form").innerHTML = form+formness(form);
-    document.getElementById("ph").innerHTML = ph+phness(ph);
-    document.getElementById("wet").innerHTML = wet+wetness(wet);
-    addWord("moss");
-    document.getElementById("gem").innerHTML = gem+gemmaeness(gem);
-    cleanPhrase();
+    document.getElementById("count").innerHTML = countness(count);
+    document.getElementById("leng").innerHTML = sizeness(leng);
+    document.getElementById("light").innerHTML = lightness(light);
+    document.getElementById("form").innerHTML = formness(form);
+    document.getElementById("ph").innerHTML = phness(ph);
+    document.getElementById("wet").innerHTML = wetness(wet);
+    document.getElementById("type").innerHTML = typeness(type);
+    document.getElementById("habitat").innerHTML = oxford(hablist);
+    document.getElementById("gem").innerHTML = gemmaeness(gem);
+    // cleanPhrase();
 }
 
-function addWord(word) {
-    document.getElementById("phrase").innerHTML+= word + ", "; 
-}
+// function addWord(word) {
+//     document.getElementById("phrase").innerHTML+= word + ", "; 
+// }
+
+
 
 function cleanPhrase() {
-    let phrase = document.getElementById("phrase").innerHTML;   
-    let newphrase = phrase.replace(',','').slice(0, -2); 
-    let newphrase2 = newphrase.replace(', moss,',' moss');   
-    let newphrase3 = newphrase2.replace(', moss',' moss');   
+    let phrase = document.getElementById("phrase").innerHTML;
+    let newphrase = phrase.replace(',', '').slice(0, -2);
+    let newphrase2 = newphrase.replace(', moss,', ' moss');
+    let newphrase3 = newphrase2.replace(', moss', ' moss');
     document.getElementById("phrase").innerHTML = newphrase3;
 
 }
@@ -140,7 +197,7 @@ function getImages(title) {
         .then(function (response) {
             images = response;
             imageArray = findAllByKey(images, 'url');
-            document.getElementById("hero").style.backgroundImage= "url("+imageArray[5]+")";
+            document.getElementById("hero").style.backgroundImage = "url(" + imageArray[5] + ")";
             console.log(imageArray[0]);
             gallery(imageArray);
         })
@@ -201,72 +258,142 @@ function prevImage() {
 }
 
 function sizeness(x) {
-    x = parseInt(x*1);
+    x = parseInt(x * 1);
 
-    if (x < 5) { word = "tiny"; addWord('tiny'); } else
+    if (x < 5) { word = "tiny"; } else
         if (x < 10) { word = "small"; } else
             if (x < 50) { word = "medium-sized"; } else
-                if (x < 100) { word = "large"; } else { word = "very large"; addWord('rambling'); }
+                if (x < 100) { word = "large"; } else { word = "very large"; }
     return word;
 }
 
-function countness(x) { 
-    x = parseInt(x*1);
-    if (x < 5) { word = "very rare"; addWord('rare'); } else
+function countness(x) {
+    x = parseInt(x * 1);
+    if (x < 5) { word = "very rare"; } else
         if (x < 10) { word = "rare"; } else
             if (x < 50) { word = "uncommon"; } else
-                if (x < 200) { word = "common"; } else { word = "very common"; addWord('very common'); }
+                if (x < 200) { word = "common"; } else { word = "very common"; }
     return word;
 }
 
 function wetness(x) {
-    x = parseInt(x*1);
+    x = parseInt(x * 1);
 
-    if (x < 3) { word = "arid";addWord('very dry') } else
+    if (x < 3) { word = "arid"; } else
         if (x < 5) { word = "dry"; } else
-            if (x < 8) { word = "wet"; } else { word = "sodden"; addWord('very wet')}
+            if (x < 8) { word = "wet"; } else { word = "sodden"; }
     return word;
 }
 
 function phness(x) {
-    x = parseInt(x*1);
-    if (x < 3) { word = "very acidic"; addWord('acid-loving'); } else
-        if (x < 7) { word = "acidic"; } else 
-        if (x < 9) { word = "alkaline"; } else 
-        { word = "very alkaline"; addWord('alkaline-loving'); }
+    x = parseInt(x * 1);
+    if (x < 3) { word = "very acidic"; } else
+        if (x < 7) { word = "acidic"; } else
+            if (x < 9) { word = "alkaline"; } else { word = "very alkaline"; }
     return word;
 }
 
 function lightness(x) {
-    x = parseInt(x*1);
-    if (x < 1) { word = "total darkness"; addWord('grows in total darkness'); } else
-        if (x < 3) { word = "dark"; } else
+    x = parseInt(x * 1);
+    if (x < 1) { word = "total darkness"; } else
+        if (x < 3) { word = "darkness"; } else
             if (x < 5) { word = "shade"; } else
-                if (x < 8) { word = "semi-sunshine"; } else { word = "direct sunlight"; addWord('sun-loving'); }
+                if (x < 8) { word = "semi-sunshine"; } else { word = "direct sunlight"; }
     return word;
 }
 
 function gemmaeness(x) {
-    if (x === "F") { word = "frequent"; addWord('with gemmae often found on its leaves'); } else
-        if (x === "O") { word = "occasional"; } else 
-        if (x === "R") { word = "occasional"; } else { word = ""; }
+    if (x === "F") { word = "Gemmae are frequently found on its leaves."; } else
+        if (x === "O") { word = "Gemmae are occasionally found on its leaves."; } else
+            if (x === "R") { word = "occasional"; } else { word = ""; }
     return word;
 }
 
 function formness(x) {
+    switch (x) {
+        case 'Ac':
+            form = "floating colonies in water";
+            break;
+        case 'At':
+            form = "trails in water";
+            break;
+        case 'Cu':
+            form = "cushions";
+            break;
+        case 'De':
+            form = "tree-like woody stems and branches";
+            break;
+        case 'Fa':
+            form = "fans";
+            break;
+        case 'Le':
+            form = "floating patches";
+            break;
+        case 'Mr':
+            form = "rough mats";
+            break;
+        case 'Ms':
+            form = "smooth mats";
+            break;
+        case 'Mt':
+            form = "layered mats";
+            break;
+        case 'Sc':
+            form = "creeping shoots";
+            break;
+        case 'St':
+            form = "rosettes";
+            break;
+        case 'Tf':
+            form = "dense turfs";
+            break;
+        case 'Thread':
+            form = "threads";
+            break;
+        case 'Tp':
+            form = "turfs with visible threads";
+            break;
+        case 'Ts':
+            form = "scattered turfs";
+            break;
+        case 'Tuft':
+            form = "loose tufts";
+            break;
+        case 'We':
+            form = "intertwining wefts";
+            break;
+    }
+    return form;
+}
 
+
+function oxford(array) {
+    console.log(array);
+    if (array.length > 1) {
+    const last = array.pop();
+    const result = array.join(', ') + ' and ' + last;
+    return result;
+    }
+    else {result = array[0];return result;}
+    
+}
+
+function typeness(x) {
+    if (x === "M") { word = "moss"; } else
+        if (x === "L") { word = "liverwort"; } else { word = "hornwort"; }
+    return word;
 }
 
 function mossNames(latin) {
     fetch('names.json')
-    .then((resp) => resp.json())
-    .then(function (myJson) {
-        common = myJson;
-       commonname =  common.find(x => x.latin === latin).english;
-       document.getElementById("common").innerHTML = commonname;      
-})
+        .then((resp) => resp.json())
+        .then(function (myJson) {
+            common = myJson;
+            commonname = common.find(x => x.latin === latin).english;
+            document.getElementById("common").innerHTML = commonname;
+        })
 
-.catch(function (error) {
-    console.log(error);
-});
+        .catch(function (error) {
+            console.log(error);
+        });
 }
