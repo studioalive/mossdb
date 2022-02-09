@@ -479,67 +479,7 @@
     "EW": 3,
     "AQ": ""
   },
-  {
-    "Name_new": "Hypnum cupressiforme var. cupressiforme",
-    "Concept": "Bry_351.1",
-    "Taxon_name": "Hypnum cupressiforme var. cupressiforme",
-    "BRC_num": "0820   351.1",
-    "ML": "M",
-    "Ord": "Hypn",
-    "Stat": "N",
-    "Len": 60,
-    "Per": "P",
-    "LF1": "Ms",
-    "LF2": "",
-    "Tub": "",
-    "Gem": "",
-    "Bul": "",
-    "Bra": "",
-    "Lvs": "",
-    "Sex": "D",
-    "Fr": "F",
-    "Spbeg": 11,
-    "Spend": 3,
-    "Spbeg2": "",
-    "Spend2": "",
-    "Sp1": 13,
-    "Sp2": 19,
-    "E": "E",
-    "W": "W",
-    "Sc": "S",
-    "IR": "IR",
-    "NI": "NI",
-    "CI": "CI",
-    "Elem": 66,
-    "GBno": 2250,
-    "IRno": 354,
-    "CIno": 3,
-    "TJan": 3.4,
-    "TJul": 14.6,
-    "Prec": 1098,
-    "Alt": 679,
-    "L": 6,
-    "F": 4,
-    "R": 4,
-    "N": 4,
-    "S": 0,
-    "HM": 1,
-    "RH": 3,
-    "RS": "",
-    "RW": 3,
-    "SR": 3,
-    "SO": 3,
-    "PT": "",
-    "GS": 3,
-    "DW": 3,
-    "DV": "",
-    "DA": "",
-    "BR": "",
-    "EN": "",
-    "EW": 3,
-    "AQ": ""
-  },
-  {
+    {
     "Name_new": "Bryum capillare",
     "Concept": "Bry_94",
     "Taxon_name": "Bryum capillare",
@@ -1620,9 +1560,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Bryum dichotomum s.l.",
+    "Name_new": "Bryum dichotomum",
     "Concept": "Bry_90",
-    "Taxon_name": "Bryum dichotomum s.l.",
+    "Taxon_name": "Bryum dichotomum",
     "BRC_num": "0820    90",
     "ML": "M",
     "Ord": "Brya",
@@ -1740,9 +1680,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Cratoneuron filicinum s.l.",
+    "Name_new": "Cratoneuron filicinum",
     "Concept": "Bry_163",
-    "Taxon_name": "Cratoneuron filicinum s.l.",
+    "Taxon_name": "Cratoneuron filicinum",
     "BRC_num": "0820   163",
     "ML": "M",
     "Ord": "Hypn",
@@ -1800,9 +1740,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Schistidium apocarpum s.l.",
+    "Name_new": "Schistidium apocarpum",
     "Concept": "Bry_291",
-    "Taxon_name": "Schistidium apocarpum s.l.",
+    "Taxon_name": "Schistidium apocarpum",
     "BRC_num": "0820   291",
     "ML": "M",
     "Ord": "Grim",
@@ -2640,9 +2580,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Conocephalum conicum s.l.",
+    "Name_new": "Conocephalum conicum",
     "Concept": "Bry_745",
-    "Taxon_name": "Conocephalum conicum s.l.",
+    "Taxon_name": "Conocephalum conicum",
     "BRC_num": "0810   745",
     "ML": "L",
     "Ord": "Marc",
@@ -2880,9 +2820,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Plagiochila asplenioides s.l.",
+    "Name_new": "Plagiochila asplenioides",
     "Concept": "Bry_872",
-    "Taxon_name": "Plagiochila asplenioides s.l.",
+    "Taxon_name": "Plagiochila asplenioides",
     "BRC_num": "0810   872",
     "ML": "L",
     "Ord": "Jung",
@@ -3960,7 +3900,7 @@
     "AQ": ""
   },
   {
-    "Name_new": "Zygodon viridissimus s.l.",
+    "Name_new": "Zygodon viridissimus",
     "Concept": "Bry_653",
     "Taxon_name": "Zygodon viridissimus",
     "BRC_num": "0820   653",
@@ -4080,9 +4020,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Ulota crispa s.l.",
+    "Name_new": "Ulota crispa",
     "Concept": "Bry_1052",
-    "Taxon_name": "Ulota crispa s.l.",
+    "Taxon_name": "Ulota crispa",
     "BRC_num": "0820  1052",
     "ML": "M",
     "Ord": "Orth",
@@ -4380,9 +4320,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Chiloscyphus polyanthos s.l.",
+    "Name_new": "Chiloscyphus polyanthos",
     "Concept": "Bry_986",
-    "Taxon_name": "Chiloscyphus polyanthos s.l.",
+    "Taxon_name": "Chiloscyphus polyanthos",
     "BRC_num": "0810   986",
     "ML": "L",
     "Ord": "Jung",
@@ -6000,7 +5940,7 @@
     "AQ": ""
   },
   {
-    "Name_new": "Campylium stellatum s.l.",
+    "Name_new": "Campylium stellatum",
     "Concept": "Bry_1078",
     "Taxon_name": "Campylium stellatum",
     "BRC_num": "0820  1078",
@@ -6060,9 +6000,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Sphagnum subsecundum s.l.",
+    "Name_new": "Sphagnum subsecundum",
     "Concept": "Bry_1755",
-    "Taxon_name": "Sphagnum subsecundum s.l.",
+    "Taxon_name": "Sphagnum subsecundum",
     "BRC_num": "0820  1755",
     "ML": "M",
     "Ord": "Sphag",
@@ -6540,9 +6480,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Sphagnum denticulatum s.l.",
+    "Name_new": "Sphagnum denticulatum",
     "Concept": "Bry_578",
-    "Taxon_name": "Sphagnum denticulatum s.l.",
+    "Taxon_name": "Sphagnum denticulatum",
     "BRC_num": "0820   578",
     "ML": "M",
     "Ord": "Sphag",
@@ -6660,9 +6600,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Sphagnum recurvum s.l.",
+    "Name_new": "Sphagnum recurvum",
     "Concept": "Bry_571",
-    "Taxon_name": "Sphagnum recurvum s.l.",
+    "Taxon_name": "Sphagnum recurvum",
     "BRC_num": "0820   571",
     "ML": "M",
     "Ord": "Sphag",
@@ -6720,9 +6660,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Syntrichia ruralis s.l.",
+    "Name_new": "Syntrichia ruralis",
     "Concept": "Bry_1758",
-    "Taxon_name": "Syntrichia ruralis s.l.",
+    "Taxon_name": "Syntrichia ruralis",
     "BRC_num": "0820  1758",
     "ML": "M",
     "Ord": "Pott",
@@ -7080,9 +7020,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Dichodontium pellucidum s.l.",
+    "Name_new": "Dichodontium pellucidum",
     "Concept": "Bry_180",
-    "Taxon_name": "Dichodontium pellucidum s.l.",
+    "Taxon_name": "Dichodontium pellucidum",
     "BRC_num": "0820   180",
     "ML": "M",
     "Ord": "Dicr",
@@ -8040,9 +7980,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Fissidens viridulus s.l.",
+    "Name_new": "Fissidens viridulus",
     "Concept": "Bry_1055",
-    "Taxon_name": "Fissidens viridulus s.l.",
+    "Taxon_name": "Fissidens viridulus",
     "BRC_num": "0820  1055",
     "ML": "M",
     "Ord": "Dicr",
@@ -8520,7 +8460,7 @@
     "AQ": ""
   },
   {
-    "Name_new": "Palustriella commutata s.l.",
+    "Name_new": "Palustriella commutata",
     "Concept": "Bry_161",
     "Taxon_name": "Palustriella commutata",
     "BRC_num": "0820   161",
@@ -8580,9 +8520,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Rhynchostegiella tenella s.l.",
+    "Name_new": "Rhynchostegiella tenella",
     "Concept": "Bry_531",
-    "Taxon_name": "Rhynchostegiella tenella s.l.",
+    "Taxon_name": "Rhynchostegiella tenella",
     "BRC_num": "0820   531",
     "ML": "M",
     "Ord": "Hypn",
@@ -9900,9 +9840,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Bryum caespiticium s.l.",
+    "Name_new": "Bryum caespiticium",
     "Concept": "Bry_91",
-    "Taxon_name": "Bryum caespiticium s.l.",
+    "Taxon_name": "Bryum caespiticium",
     "BRC_num": "0820    91",
     "ML": "M",
     "Ord": "Brya",
@@ -10560,9 +10500,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Racomitrium canescens s.l.",
+    "Name_new": "Racomitrium canescens",
     "Concept": "Bry_521",
-    "Taxon_name": "Racomitrium canescens s.l.",
+    "Taxon_name": "Racomitrium canescens",
     "BRC_num": "0820   521",
     "ML": "M",
     "Ord": "Grim",
@@ -10620,9 +10560,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Metzgeria fruticulosa s.l.",
+    "Name_new": "Metzgeria fruticulosa",
     "Concept": "Bry_844",
-    "Taxon_name": "Metzgeria fruticulosa s.l.",
+    "Taxon_name": "Metzgeria fruticulosa",
     "BRC_num": "0810   844",
     "ML": "L",
     "Ord": "Metz",
@@ -10860,9 +10800,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Scorpidium revolvens s.l.",
+    "Name_new": "Scorpidium revolvens",
     "Concept": "Bry_226",
-    "Taxon_name": "Drepanocladus revolvens s.l.",
+    "Taxon_name": "Drepanocladus revolvens",
     "BRC_num": "0820   226",
     "ML": "M",
     "Ord": "Hypn",
@@ -14400,9 +14340,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Ditrichum flexicaule s.l.",
+    "Name_new": "Ditrichum flexicaule",
     "Concept": "Bry_216",
-    "Taxon_name": "Ditrichum flexicaule s.l.",
+    "Taxon_name": "Ditrichum flexicaule",
     "BRC_num": "0820   216",
     "ML": "M",
     "Ord": "Dicr",
@@ -14640,9 +14580,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Fossombronia pusilla s.l.",
+    "Name_new": "Fossombronia pusilla",
     "Concept": "Bry_762",
-    "Taxon_name": "Fossombronia pusilla s.l.",
+    "Taxon_name": "Fossombronia pusilla",
     "BRC_num": "0810   762",
     "ML": "L",
     "Ord": "Foss",
@@ -15360,7 +15300,7 @@
     "AQ": ""
   },
   {
-    "Name_new": "Ephemerum serratum s.l.",
+    "Name_new": "Ephemerum serratum",
     "Concept": "Bry_239",
     "Taxon_name": "Ephemerum serratum",
     "BRC_num": "0820   239",
@@ -15480,9 +15420,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Hedwigia ciliata s.l.",
+    "Name_new": "Hedwigia ciliata",
     "Concept": "Bry_328",
-    "Taxon_name": "Hedwigia ciliata s.l.",
+    "Taxon_name": "Hedwigia ciliata",
     "BRC_num": "0820   328",
     "ML": "M",
     "Ord": "Hedw",
@@ -15780,9 +15720,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Schistidium rivulare s.l.",
+    "Name_new": "Schistidium rivulare",
     "Concept": "Bry_289",
-    "Taxon_name": "Schistidium rivulare s.l.",
+    "Taxon_name": "Schistidium rivulare",
     "BRC_num": "0820   289",
     "ML": "M",
     "Ord": "Grim",
@@ -16260,9 +16200,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Dicranum fuscescens s.l.",
+    "Name_new": "Dicranum fuscescens",
     "Concept": "Bry_201",
-    "Taxon_name": "Dicranum fuscescens s.l.",
+    "Taxon_name": "Dicranum fuscescens",
     "BRC_num": "0820   201",
     "ML": "M",
     "Ord": "Dicr",
@@ -16980,9 +16920,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Plagiochila spinulosa s.l.",
+    "Name_new": "Plagiochila spinulosa",
     "Concept": "Bry_874",
-    "Taxon_name": "Plagiochila spinulosa s.l.",
+    "Taxon_name": "Plagiochila spinulosa",
     "BRC_num": "0810   874",
     "ML": "L",
     "Ord": "Jung",
@@ -17100,9 +17040,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Aloina aloides s.l.",
+    "Name_new": "Aloina aloides",
     "Concept": "Bry_1077",
-    "Taxon_name": "Aloina aloides s.l.",
+    "Taxon_name": "Aloina aloides",
     "BRC_num": "0820  1077",
     "ML": "M",
     "Ord": "Pott",
@@ -17160,9 +17100,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Microbryum starckeanum s.l.",
+    "Name_new": "Microbryum starckeanum",
     "Concept": "Bry_500",
-    "Taxon_name": "Microbryum starckeanum s.l.",
+    "Taxon_name": "Microbryum starckeanum",
     "BRC_num": "0820   500",
     "ML": "M",
     "Ord": "Pott",
@@ -19080,9 +19020,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Fissidens pusillus s.l.",
+    "Name_new": "Fissidens pusillus",
     "Concept": "Bry_267",
-    "Taxon_name": "Fissidens pusillus s.l.",
+    "Taxon_name": "Fissidens pusillus",
     "BRC_num": "0820   267",
     "ML": "M",
     "Ord": "Dicr",
@@ -19320,7 +19260,7 @@
     "AQ": ""
   },
   {
-    "Name_new": "Anomobryum julaceum s.l.",
+    "Name_new": "Anomobryum julaceum",
     "Concept": "Bry_1503",
     "Taxon_name": "Anomobryum julaceum",
     "BRC_num": "0820  1503",
@@ -25800,9 +25740,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Hymenostylium recurvirostrum s.l.",
+    "Name_new": "Hymenostylium recurvirostrum",
     "Concept": "Bry_323",
-    "Taxon_name": "Hymenostylium recurvirostrum s.l.",
+    "Taxon_name": "Hymenostylium recurvirostrum",
     "BRC_num": "0820   323",
     "ML": "M",
     "Ord": "Pott",
@@ -27600,9 +27540,9 @@
     "AQ": 3
   },
   {
-    "Name_new": "Grimmia donniana s.l.",
+    "Name_new": "Grimmia donniana",
     "Concept": "Bry_298",
-    "Taxon_name": "Grimmia donniana s.l.",
+    "Taxon_name": "Grimmia donniana",
     "BRC_num": "0820   298",
     "ML": "M",
     "Ord": "Grim",
@@ -28020,9 +27960,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Sphagnum imbricatum s.l.",
+    "Name_new": "Sphagnum imbricatum",
     "Concept": "Bry_560",
-    "Taxon_name": "Sphagnum imbricatum s.l.",
+    "Taxon_name": "Sphagnum imbricatum",
     "BRC_num": "0820   560",
     "ML": "M",
     "Ord": "Sphag",
@@ -28980,9 +28920,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Phaeoceros laevis s.l.",
+    "Name_new": "Phaeoceros laevis",
     "Concept": "Bry_689",
-    "Taxon_name": "Phaeoceros laevis s.l.",
+    "Taxon_name": "Phaeoceros laevis",
     "BRC_num": "0810   689",
     "ML": "H",
     "Ord": "Anth",
@@ -30180,9 +30120,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Calypogeia neesiana s.l.",
+    "Name_new": "Calypogeia neesiana",
     "Concept": "Bry_708",
-    "Taxon_name": "Calypogeia neesiana s.l.",
+    "Taxon_name": "Calypogeia neesiana",
     "BRC_num": "0810   708",
     "ML": "L",
     "Ord": "Jung",
@@ -32820,7 +32760,7 @@
     "AQ": ""
   },
   {
-    "Name_new": "Acaulon muticum s.l.",
+    "Name_new": "Acaulon muticum",
     "Concept": "Bry_1",
     "Taxon_name": "Acaulon muticum",
     "BRC_num": "0820     1",
@@ -46740,9 +46680,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Pseudoleskeella catenulata s.l.",
+    "Name_new": "Pseudoleskeella catenulata",
     "Concept": "Bry_504",
-    "Taxon_name": "Pseudoleskeella catenulata s.l.",
+    "Taxon_name": "Pseudoleskeella catenulata",
     "BRC_num": "0820   504",
     "ML": "M",
     "Ord": "Hypn",
@@ -47340,7 +47280,7 @@
     "AQ": ""
   },
   {
-    "Name_new": "Fossombronia caespitiformis s.l.",
+    "Name_new": "Fossombronia caespitiformis",
     "Concept": "Bry_4153",
     "Taxon_name": "Fossombronia husnotii",
     "BRC_num": "0810   759",
@@ -51360,9 +51300,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Anastrophyllum joergensenii s.l.",
+    "Name_new": "Anastrophyllum joergensenii",
     "Concept": "Bry_685",
-    "Taxon_name": "Anastrophyllum joergensenii s.l.",
+    "Taxon_name": "Anastrophyllum joergensenii",
     "BRC_num": "0810   685",
     "ML": "L",
     "Ord": "Jung",
@@ -51900,9 +51840,9 @@
     "AQ": ""
   },
   {
-    "Name_new": "Seligeria trifaria s.l.",
+    "Name_new": "Seligeria trifaria",
     "Concept": "Bry_549",
-    "Taxon_name": "Seligeria trifaria s.l.",
+    "Taxon_name": "Seligeria trifaria",
     "BRC_num": "0820   549",
     "ML": "M",
     "Ord": "Grim",
@@ -71629,126 +71569,6 @@
     "RW": "",
     "SR": "",
     "SO": 3,
-    "PT": "",
-    "GS": "",
-    "DW": "",
-    "DV": "",
-    "DA": "",
-    "BR": "",
-    "EN": "",
-    "EW": "",
-    "AQ": ""
-  },
-  {
-    "Name_new": "Tortula schimperi",
-    "Concept": "Bry_3202",
-    "Taxon_name": "",
-    "BRC_num": "",
-    "ML": "",
-    "Ord": "",
-    "Stat": "",
-    "Len": "",
-    "Per": "",
-    "LF1": "",
-    "LF2": "",
-    "Tub": "",
-    "Gem": "",
-    "Bul": "",
-    "Bra": "",
-    "Lvs": "",
-    "Sex": "",
-    "Fr": "",
-    "Spbeg": "",
-    "Spend": "",
-    "Spbeg2": "",
-    "Spend2": "",
-    "Sp1": "",
-    "Sp2": "",
-    "E": "",
-    "W": "",
-    "Sc": "",
-    "IR": "",
-    "NI": "",
-    "CI": "",
-    "Elem": "",
-    "GBno": "",
-    "IRno": "",
-    "CIno": "",
-    "TJan": "",
-    "TJul": "",
-    "Prec": "",
-    "Alt": "",
-    "L": "",
-    "F": "",
-    "R": "",
-    "N": "",
-    "S": "",
-    "HM": "",
-    "RH": "",
-    "RS": "",
-    "RW": "",
-    "SR": "",
-    "SO": "",
-    "PT": "",
-    "GS": "",
-    "DW": "",
-    "DV": "",
-    "DA": "",
-    "BR": "",
-    "EN": "",
-    "EW": "",
-    "AQ": ""
-  },
-  {
-    "Name_new": "Moerckia hibernica s.str.",
-    "Concept": "Bry_4145",
-    "Taxon_name": "",
-    "BRC_num": "",
-    "ML": "",
-    "Ord": "",
-    "Stat": "",
-    "Len": "",
-    "Per": "",
-    "LF1": "",
-    "LF2": "",
-    "Tub": "",
-    "Gem": "",
-    "Bul": "",
-    "Bra": "",
-    "Lvs": "",
-    "Sex": "",
-    "Fr": "",
-    "Spbeg": "",
-    "Spend": "",
-    "Spbeg2": "",
-    "Spend2": "",
-    "Sp1": "",
-    "Sp2": "",
-    "E": "",
-    "W": "",
-    "Sc": "",
-    "IR": "",
-    "NI": "",
-    "CI": "",
-    "Elem": "",
-    "GBno": "",
-    "IRno": "",
-    "CIno": "",
-    "TJan": "",
-    "TJul": "",
-    "Prec": "",
-    "Alt": "",
-    "L": "",
-    "F": "",
-    "R": "",
-    "N": "",
-    "S": "",
-    "HM": "",
-    "RH": "",
-    "RS": "",
-    "RW": "",
-    "SR": "",
-    "SO": "",
     "PT": "",
     "GS": "",
     "DW": "",

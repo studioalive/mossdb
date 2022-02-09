@@ -98,7 +98,7 @@ position: absolute;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 300px; /* Could be more or less, depending on screen size */
+    width: 350px; /* Could be more or less, depending on screen size */
     text-align: left;
     font-family: "Times New Roman";
   }
@@ -148,7 +148,7 @@ position: absolute;
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  padding-top: 50px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -175,7 +175,7 @@ position: absolute;
   text-align: center;
   color: #ccc;
   padding: 10px 0;
-  height: 150px;
+  height: 0px;
 }
 
 /* Add Animation */
