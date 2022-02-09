@@ -40,9 +40,21 @@ function mossFilter() {
     document.getElementById("mossNumber").innerHTML = pages;
     displayPage(0);
 
-
-
 }
+
+function displayPage(i) {
+    document.getElementById("phrase").innerHTML ="";
+    document.getElementById("wiki").innerHTML = "";
+    document.getElementById("gallery").innerHTML = "";
+    document.getElementById("page").innerHTML = page + 1;
+    document.getElementById("pagetotal").innerHTML = pages;
+    var title = mossList[i].Name_new;
+    displayFacts(i);
+    // getWiki(title);
+    getImages(title);
+    mossNames(title);
+}
+
 
 function displayFacts(i) {
     let title = mossList[i].Name_new;
@@ -112,19 +124,6 @@ function getWiki(title) {
 
 }
 
-function displayPage(i) {
-    document.getElementById("phrase").innerHTML ="";
-    document.getElementById("wiki").innerHTML = "";
-    document.getElementById("gallery").innerHTML = "";
-    document.getElementById("page").innerHTML = page + 1;
-    document.getElementById("pagetotal").innerHTML = pages;
-    var title = mossList[i].Name_new;
-    displayFacts(i);
-    // getWiki(title);
-    getImages(title);
-    mossNames(title);
-}
-
 function underscore(title) {
     var regex = / /gm;
     var str = title;
@@ -141,6 +140,8 @@ function getImages(title) {
         .then(function (response) {
             images = response;
             imageArray = findAllByKey(images, 'url');
+            document.getElementById("hero").style.backgroundImage= "url("+imageArray[5]+")";
+            console.log(imageArray[0]);
             gallery(imageArray);
         })
 

@@ -8,179 +8,185 @@
     <script src="mossparser.js"></script>
     <title>Moss Database</title>
     <link rel="stylesheet" href="styles.css">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="prev">
-        <button id="prev" onclick="prev()">Previous</button>
+    <div class="hero" id="hero">
+        <div class="prev">
+            <button id="prev" onclick="prev()">Previous</button>
+        </div>
+        <div class="next">
+            <button id="next" onclick="next()">Next</button>
+        </div>
+        <h2 id="title"></h2>
     </div>
-    <div class="next">
-        <button id="next" onclick="next()">Next</button>
-    </div>
-    <div class="pages">
-        <h3><span id="page"></span>/<span id="pagetotal"></span></h3>
-    </div>
-    <h2 id="title"></h2>
-    <h3 class="common" id="common"></h3>
-    <h3 class="phrase" id="phrase"></h3>
-    <div class="facts">
-        <h3>Count: <span id="count"></span></h3>
-        <h3>Length: <span id="leng"></span></h3>
-        <h3>Form: <span id="form"></span></h3>
-        <h3>pH: <span id="ph"></span></h3>
-        <h3>Light: <span id="light"></span></h3>
-        <h3>Moisture: <span id="wet"></span></h3>
-        <h3>Gemmae: <span id="gem"></span></h3>
-    </div>
-    <div class="wiki" id="wiki">
-    </div>
-    <div class="gallery" id="gallery">
-        
-    </div>
-<!-- Image Modal -->
-<div id="imageModal" class="imageModal">
-    <div class="prev">
-        <button id="prev" onclick="prevImage()">Previous</button>
-    </div>
-    <div class="next">
-        <button id="next" onclick="nextImage()">Next</button>
-    </div>
-    <span class="imageModalclose">&times;</span>
-    <img class="imageModal-content" id="modalImage">
-    <div id="caption"></div>
-  </div>
-    <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Filter</button>
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>
-            <div class="filter">
-                <div class="order">
-                    <label for="ORDER">Order:</label>
-                    <select id="ORDER" class="filterable" onchange="mossFilter()">
-                        <option value="">All</option>
-                        <option value="Andr">Andreaeales</option>
-                        <option value="Arch">Archidiales</option>
-                        <option value="Brya">Bryales</option>
-                        <option value="Buxb">Buxbaumiales</option>
-                        <option value="Dicr">Dicranales</option>
-                        <option value="Diph">Diphysciales</option>
-                        <option value="Enca">Encalyptales</option>
-                        <option value="Funa">Funariales</option>
-                        <option value="Grim">Grimmiales</option>
-                        <option value="Hedw">Hedwigiales</option>
-                        <option value="Hook">Hookeriales</option>
-                        <option value="Hypn">Hypnales</option>
-                        <option value="Oedi">Oedipodiales</option>
-                        <option value="Orth">Orthotrichales</option>
-                        <option value="Poly">Polytrichales</option>
-                        <option value="Pott">Pottiales</option>
-                        <option value="Rhiz">Rhizogoniales</option>
-                        <option value="Sphag">Sphagnales</option>
-                        <option value="Spla">Splachnales</option>
-                        <option value="Tetr">Tetraphidales</option>
-                        <option value="Timm">Timmiales</option>
-                    </select><br>
-                    <label for="HABITAT">Habitat:</label>
-                    <select id="HABITAT" class="filterable" onchange="mossFilter()">
-                        <option value="">All</option>
-                        <option value="SO">Soil</option>
-                        <option value="SR">Soil on rock</option>
-                        <option value="RH">Rock, hard</option>
-                        <option value="RS">Rock, soft</option>
-                        <option value="RW">Rock, worked</option>
-                        <option value="EW">Epiphytic on living wood</option>
-                        <option value="EN">Epiphytic on non-woody substrates</option>
-                        <option value="GS">Gravel or sand</option>
-                        <option value="PT">Peat</option>
-                        <option value="DW">Hollow wood</option>
-                        <option value="DV">Decaying vegetation</option>
-                        <option value="DA">Decaying animal</option>
-                        <option value="BR">Bryophyte</option>
-                        <option value="AQ">Floating on water</option>
-                    </select><br>
-                    <label for="LENGTH">Length:</label>
-                    <select id="LENG" class="filterable" onchange="mossFilter()">
-                        <option value="">All</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select><br>
-                    <label for="FORM">Form:</label>
-                    <select id="FORM" class="filterable" onchange="mossFilter()">
-                        <option value="">All</option>
-                        <option value="Cu">Cushion</option>
-                        <option value="Tuft">Tuft</option>
-                        <option value="Tf">Turf</option>
-                        <option value="Ms">Mat</option>
-                        <option value="Weft">Weft</option>
-                        <option value="De">Dendroid</option>
-                        <option value="Fa">Fan</option>
-                        <option value="Thread">Thread</option>
-                        <option value="Sc">Solitary</option>
-                        <option value="Ac">Aquatic colonial</option>
-                    </select><br>
-                    <label for="LIGHT">Light:</label>
-                    <select id="LIGHT" class="filterable" onchange="mossFilter()">
-                        <option value="">All</option>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                    </select><br>
-                    <label for="PH">pH:</label>
-                    <select id="PH" class="filterable" onchange="mossFilter()">
-                        <option value="">All</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                    </select><br>
-                    <label for="MOISTURE">Moisture:</label>
-                    <select id="WET" class="filterable" onchange="mossFilter()">
-                        <option value="">All</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                    </select><br>
-                    <label for="GEMMAE">Gemmae:</label>
-                    <select id="GEM" class="filterable" onchange="mossFilter()">
-                        <option value="">All</option>
-                        <option value="F">Frequent</option>
-                        <option value="O">Occasional</option>
-                        <option value="R">Rare</option>
-                    </select><br>
-                </div><br>
-                <p>Mosses found: <span id="mossNumber"></span></p>
-            </div>
-            </p>
+    <div class="container">
+        <div class="pages">
+            <h3><span id="page"></span>/<span id="pagetotal"></span></h3>
         </div>
 
+        <h3 class="common" id="common"></h3>
+        <h3 class="phrase" id="phrase"></h3>
+        <div class="facts">
+            <h3>Count: <span id="count"></span></h3>
+            <h3>Length: <span id="leng"></span></h3>
+            <h3>Form: <span id="form"></span></h3>
+            <h3>pH: <span id="ph"></span></h3>
+            <h3>Light: <span id="light"></span></h3>
+            <h3>Moisture: <span id="wet"></span></h3>
+            <h3>Gemmae: <span id="gem"></span></h3>
+        </div>
+        <div class="wiki" id="wiki">
+        </div>
+        <div class="gallery" id="gallery">
+
+        </div>
+        <!-- Image Modal -->
+        <div id="imageModal" class="imageModal">
+            <div class="prev">
+                <button id="prev" onclick="prevImage()">Previous</button>
+            </div>
+            <div class="next">
+                <button id="next" onclick="nextImage()">Next</button>
+            </div>
+            <span class="imageModalclose">&times;</span>
+            <img class="imageModal-content" id="modalImage">
+            <div id="caption"></div>
+        </div>
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn">Filter</button>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>
+                <div class="filter">
+                    <div class="order">
+                        <label for="ORDER">Order:</label>
+                        <select id="ORDER" class="filterable" onchange="mossFilter()">
+                            <option value="">All</option>
+                            <option value="Andr">Andreaeales</option>
+                            <option value="Arch">Archidiales</option>
+                            <option value="Brya">Bryales</option>
+                            <option value="Buxb">Buxbaumiales</option>
+                            <option value="Dicr">Dicranales</option>
+                            <option value="Diph">Diphysciales</option>
+                            <option value="Enca">Encalyptales</option>
+                            <option value="Funa">Funariales</option>
+                            <option value="Grim">Grimmiales</option>
+                            <option value="Hedw">Hedwigiales</option>
+                            <option value="Hook">Hookeriales</option>
+                            <option value="Hypn">Hypnales</option>
+                            <option value="Oedi">Oedipodiales</option>
+                            <option value="Orth">Orthotrichales</option>
+                            <option value="Poly">Polytrichales</option>
+                            <option value="Pott">Pottiales</option>
+                            <option value="Rhiz">Rhizogoniales</option>
+                            <option value="Sphag">Sphagnales</option>
+                            <option value="Spla">Splachnales</option>
+                            <option value="Tetr">Tetraphidales</option>
+                            <option value="Timm">Timmiales</option>
+                        </select><br>
+                        <label for="HABITAT">Habitat:</label>
+                        <select id="HABITAT" class="filterable" onchange="mossFilter()">
+                            <option value="">All</option>
+                            <option value="SO">Soil</option>
+                            <option value="SR">Soil on rock</option>
+                            <option value="RH">Rock, hard</option>
+                            <option value="RS">Rock, soft</option>
+                            <option value="RW">Rock, worked</option>
+                            <option value="EW">Epiphytic on living wood</option>
+                            <option value="EN">Epiphytic on non-woody substrates</option>
+                            <option value="GS">Gravel or sand</option>
+                            <option value="PT">Peat</option>
+                            <option value="DW">Hollow wood</option>
+                            <option value="DV">Decaying vegetation</option>
+                            <option value="DA">Decaying animal</option>
+                            <option value="BR">Bryophyte</option>
+                            <option value="AQ">Floating on water</option>
+                        </select><br>
+                        <label for="LENGTH">Length:</label>
+                        <select id="LENG" class="filterable" onchange="mossFilter()">
+                            <option value="">All</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select><br>
+                        <label for="FORM">Form:</label>
+                        <select id="FORM" class="filterable" onchange="mossFilter()">
+                            <option value="">All</option>
+                            <option value="Cu">Cushion</option>
+                            <option value="Tuft">Tuft</option>
+                            <option value="Tf">Turf</option>
+                            <option value="Ms">Mat</option>
+                            <option value="Weft">Weft</option>
+                            <option value="De">Dendroid</option>
+                            <option value="Fa">Fan</option>
+                            <option value="Thread">Thread</option>
+                            <option value="Sc">Solitary</option>
+                            <option value="Ac">Aquatic colonial</option>
+                        </select><br>
+                        <label for="LIGHT">Light:</label>
+                        <select id="LIGHT" class="filterable" onchange="mossFilter()">
+                            <option value="">All</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select><br>
+                        <label for="PH">pH:</label>
+                        <select id="PH" class="filterable" onchange="mossFilter()">
+                            <option value="">All</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select><br>
+                        <label for="MOISTURE">Moisture:</label>
+                        <select id="WET" class="filterable" onchange="mossFilter()">
+                            <option value="">All</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select><br>
+                        <label for="GEMMAE">Gemmae:</label>
+                        <select id="GEM" class="filterable" onchange="mossFilter()">
+                            <option value="">All</option>
+                            <option value="F">Frequent</option>
+                            <option value="O">Occasional</option>
+                            <option value="R">Rare</option>
+                        </select><br>
+                    </div><br>
+                    <p>Mosses found: <span id="mossNumber"></span></p>
+                </div>
+                </p>
+            </div>
+        </div>
     </div>
 
 
@@ -216,13 +222,13 @@
 
         function prev() {
             page--;
-            if (page<0) {page=pages-1;}
+            if (page < 0) { page = pages - 1; }
             displayPage(page);
         }
 
         function next() {
             page++;
-            if (page>pages-1) {page=0;}
+            if (page > pages - 1) { page = 0; }
             displayPage(page);
         }
 
