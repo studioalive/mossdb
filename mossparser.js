@@ -43,7 +43,7 @@ function mossFilter() {
 }
 
 function displayPage(i) {
-    // document.getElementById("phrase").innerHTML ="";
+    document.getElementById("common").innerHTML ="";
     document.getElementById("wiki").innerHTML = "";
     document.getElementById("gallery").innerHTML = "";
     document.getElementById("page").innerHTML = page + 1;
@@ -198,7 +198,6 @@ function getImages(title) {
             images = response;
             imageArray = findAllByKey(images, 'url');
             document.getElementById("hero").style.backgroundImage = "url(" + imageArray[5] + ")";
-            console.log(imageArray[0]);
             gallery(imageArray);
         })
 
@@ -368,7 +367,6 @@ function formness(x) {
 
 
 function oxford(array) {
-    console.log(array);
     if (array.length > 1) {
     const last = array.pop();
     const result = array.join(', ') + ' and ' + last;
@@ -388,9 +386,12 @@ function mossNames(latin) {
     fetch('names.json')
         .then((resp) => resp.json())
         .then(function (myJson) {
-            common = myJson;
-            commonname = common.find(x => x.latin === latin).english;
-            document.getElementById("common").innerHTML = commonname;
+            var common = myJson;
+ 
+                commonname = common.filter(x => x.latin === latin); 
+        if (commonname.length>0) 
+            {document.getElementById("common").innerHTML = commonname[0].english;} else
+            {document.getElementById("common").innerHTML = latin;}
         })
 
         .catch(function (error) {

@@ -1,6 +1,6 @@
 [
     {
-      "latin": "Abietinella abietina v. abietina",
+      "latin": "Abietinella abietina",
       "english": "Fir Tamarisk-moss"
     },
     {
@@ -12,7 +12,7 @@
       "english": "Spiny-spored Pygmy-moss"
     },
     {
-      "latin": "Acaulon muticum v. muticum",
+      "latin": "Acaulon muticum",
       "english": "Rounded Pygmy-moss"
     },
     {
@@ -72,7 +72,7 @@
       "english": "Salt Feathermoss"
     },
     {
-      "latin": "Amblystegium serpens v. serpens",
+      "latin": "Amblystegium serpens",
       "english": "Creeping Feathermoss"
     },
     {
@@ -148,7 +148,7 @@
       "english": "Dusky Rockmoss"
     },
     {
-      "latin": "Andreaea rupestris v. rupestris",
+      "latin": "Andreaea rupestris",
       "english": "Black Rockmoss"
     },
     {
@@ -176,7 +176,7 @@
       "english": "Neat Silver-moss"
     },
     {
-      "latin": "Anomobryum julaceum v. julaceum",
+      "latin": "Anomobryum julaceum",
       "english": "Slender Silver-moss"
     },
     {
@@ -896,7 +896,7 @@
       "english": "Moon-leaved Pincerwort"
     },
     {
-      "latin": "Cephalozia macrostachya v. macrostachya",
+      "latin": "Cephalozia macrostachya",
       "english": "Bog Pincerwort"
     },
     {
@@ -1512,7 +1512,7 @@
       "english": "Few-toothed Earthmoss"
     },
     {
-      "latin": "Ephemerum minutissimum v. minutissimum",
+      "latin": "Ephemerum minutissimum",
       "english": "Minute Earthmoss"
     },
     {
@@ -1520,7 +1520,7 @@
       "english": "Strap-leaved Earthmoss"
     },
     {
-      "latin": "Ephemerum serratum v. serratum",
+      "latin": "Ephemerum serratum",
       "english": "Serrated Earthmoss"
     },
     {
@@ -1680,7 +1680,7 @@
       "english": "Curnow’s Water-moss"
     },
     {
-      "latin": "Fontinalis squamosa v. squamosa",
+      "latin": "Fontinalis squamosa",
       "english": "Alpine Water-moss"
     },
     {
@@ -1736,7 +1736,7 @@
       "english": "Shedding Scalewort"
     },
     {
-      "latin": "Frullania microphylla v. microphylla",
+      "latin": "Frullania microphylla",
       "english": "Lesser Scalewort"
     },
     {
@@ -2036,7 +2036,7 @@
       "english": "Slender Tamarisk-moss"
     },
     {
-      "latin": "Heterocladium heteropterum v. heteropterum",
+      "latin": "Heterocladium heteropterum",
       "english": "Wry-leaved Tamarisk-moss"
     },
     {
@@ -2140,7 +2140,7 @@
       "english": "Robust Tufa-moss"
     },
     {
-      "latin": "Hymenostylium recurvirostrum v. recurvirostrum",
+      "latin": "Hymenostylium recurvirostrum",
       "english": "Hook-beak Tufa-moss"
     },
     {
@@ -2164,7 +2164,7 @@
       "english": "Downy Plaitmoss"
     },
     {
-      "latin": "Hypnum cupressiforme v. cupressiforme, also s. lat.",
+      "latin": "Hypnum cupressiforme",
       "english": "Cypress-leaved Plaitmoss"
     },
     {
@@ -2240,7 +2240,7 @@
       "english": "Marsh Flapwort"
     },
     {
-      "latin": "Jubula hutchinsiae v. hutchinsiae",
+      "latin": "Jubula hutchinsiae",
       "english": "Hutchins’ Hollywort"
     },
     {
@@ -2432,7 +2432,7 @@
       "english": "Larger Squirrel-tail Moss"
     },
     {
-      "latin": "Leucodon sciuroides v. sciuroides",
+      "latin": "Leucodon sciuroides",
       "english": "Squirrel-tail Moss"
     },
     {
@@ -2584,7 +2584,7 @@
       "english": "Robust Rustwort"
     },
     {
-      "latin": "Marsupella emarginata v. emarginata",
+      "latin": "Marsupella emarginata",
       "english": "Notched Rustwort"
     },
     {
@@ -3032,7 +3032,7 @@
       "english": "Smooth Hornwort"
     },
     {
-      "latin": "Phascum cuspidatum v. cuspidatum",
+      "latin": "Phascum cuspidatum",
       "english": "Cuspidate Earthmoss"
     },
     {
@@ -3328,7 +3328,7 @@
       "english": "Sharp-leaved Threadmoss"
     },
     {
-      "latin": "Pohlia elongata v. elongata",
+      "latin": "Pohlia elongata",
       "english": "Long-fruited Threadmoss"
     },
     {
@@ -3384,7 +3384,7 @@
       "english": "Mountain Threadmoss"
     },
     {
-      "latin": "Pohlia wahlenbergii v. wahlenbergii",
+      "latin": "Pohlia wahlenbergii",
       "english": "Pale Glaucous Threadmoss"
     },
     {
@@ -3404,7 +3404,7 @@
       "english": "Northern Haircap"
     },
     {
-      "latin": "Polytrichum commune v. commune",
+      "latin": "Polytrichum commune",
       "english": "Common Haircap"
     },
     {
@@ -3984,7 +3984,7 @@
       "english": "Hummock Grimmia"
     },
     {
-      "latin": "Schistidium frigidum v. frigidum",
+      "latin": "Schistidium frigidum",
       "english": "Frigid Grimmia"
     },
     {
@@ -4336,7 +4336,7 @@
       "english": "Brownish Bogmoss"
     },
     {
-      "latin": "Sphagnum subnitens v. subnitens",
+      "latin": "Sphagnum subnitens",
       "english": "Lustrous Bogmoss"
     },
     {
@@ -4420,7 +4420,7 @@
       "english": "Great Hairless Screwmoss"
     },
     {
-      "latin": "Syntrichia ruralis v. ruralis",
+      "latin": "Syntrichia ruralis",
       "english": "Great Hairy Screwmoss"
     },
     {
@@ -4616,7 +4616,7 @@
       "english": "Summer Screwmoss"
     },
     {
-      "latin": "Tortula muralis v. muralis",
+      "latin": "Tortula muralis",
       "english": "Wall Screwmoss"
     },
     {
@@ -4804,7 +4804,7 @@
       "english": "Narrow-leaved Beardless-moss"
     },
     {
-      "latin": "Weissia longifolia v. longifolia",
+      "latin": "Weissia longifolia",
       "english": "Crisp Beardless-moss"
     },
     {
