@@ -22,11 +22,8 @@ function mossFilter() {
     var light = document.getElementById("LIGHT").value;
     var ph = document.getElementById("PH").value;
     var wet = document.getElementById("WET").value;
-    var gem = document.getElementById("GEM").value;
-    var tub = document.getElementById("TUB").value;
-    var bra = document.getElementById("BRA").value;
-    var lea = document.getElementById("LEA").value;
-    var bul = document.getElementById("BUL").value;
+    var asex = document.getElementById("ASEX").value;
+
 
 
 
@@ -44,15 +41,12 @@ function mossFilter() {
         return (!ord || x.Ord === ord) &&
             (!habitat || x[habitat] > 2) &&
             (!leng || proleng === leng) &&
-            (!gem || x.Gem === gem) &&
             (!light || x.L === parseInt(light)) &&
             (!form || x.LF1 === form) &&
             (!ph || x.R === parseInt(ph)) &&
             (!wet || x.F === parseInt(wet)) &&
-            (!lea || x.Lvs === lea) &&
-            (!bra || x.Bra === bra) &&
-            (!bul || x.Bul === bul) &&
-            (!tub || x.Tub === tub)
+            (!asex || x[asex] === 'F') 
+
             
             
             ;
