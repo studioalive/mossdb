@@ -24,10 +24,23 @@ function mossFilter() {
     var wet = document.getElementById("WET").value;
     var gem = document.getElementById("GEM").value;
 
+
+
     mossList = moss.filter((x) => {
+
+        let dataleng = parseInt(x.Len*1);  
+        let proleng ="";
+        if (dataleng < 5) { proleng = "1"; } else
+            if (dataleng < 10) { proleng = "2"; } else
+                if (dataleng < 50) { proleng = "3"; } else
+                    if (dataleng < 100) { proleng = "4"; } else { proleng = "5"; }
+
+                    console.log("selected:"+leng+" data:"+x.Len+" dataleng:"+dataleng+" proleng:"+proleng);
+
+
         return (!ord || x.Ord === ord) &&
             (!habitat || x[habitat] > 2) &&
-            (!leng || x.Len === leng) &&
+            (!leng || proleng === leng) &&
             (!gem || x.Gem === gem) &&
             (!light || x.L === parseInt(light)) &&
             (!form || x.LF1 === form) &&
@@ -43,6 +56,8 @@ function mossFilter() {
 }
 
 function displayPage(i) {
+    document.getElementById("hero").style.backgroundImage = "";
+    gbifgallery=[];
     document.getElementById("common").innerHTML ="";
     document.getElementById("wiki").innerHTML = "";
     document.getElementById("gallery").innerHTML = "";
@@ -197,8 +212,10 @@ function getImages(title) {
         .then(function (response) {
             images = response;
             imageArray = findAllByKey(images, 'url');
+            if (imageArray.length<3) {gbif(title);} else {
             document.getElementById("hero").style.backgroundImage = "url(" + imageArray[5] + ")";
             gallery(imageArray);
+            }
         })
 
         .catch(function (error) {
@@ -398,3 +415,64 @@ function mossNames(latin) {
             console.log(error);
         });
 }
+
+
+function gbif(title) {
+    fetch('https://api.gbif.org/v1/species?name=' + title)
+        .then(function (response) { return response.json(); })
+        .then(function (response) {
+            gbifkey = response;
+            
+
+
+            imagekey = gbifkey.results[0].key;
+            console.log(imagekey);
+            gbifImage(imagekey);
+        })
+
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+function gbifImage(title) {
+    fetch('https://api.gbif.org/v1/occurrence/search?media_type=StillImage&limit=9&taxon_key=' + title)
+        .then(function (response) { return response.json(); })
+        .then(function (response) {
+            gbifarray = response;
+            console.log(gbifarray);
+
+            // results[0].media[0].identifier
+            for (i = 0; i < gbifarray.results[0].media.length; i++) {
+                        var gbifimage = gbifarray.results[0].media[i].identifier;
+                        gbifgallery.push(gbifimage);
+                        }
+                        document.getElementById("hero").style.backgroundImage = "url(" + gbifgallery[0] + ")";
+                            gallery(gbifgallery);
+        })
+
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+// function inat(title) {
+//     alert(title);
+//     fetch('https://api.inaturalist.org/v1/observations?&per_page=10&q=' + title)
+//     .then(function (response) {
+//         inatarray = response;
+//         console.log(inatarray);
+//         for (i = 0; i < inatarray.length; i++) {
+//         inatimage = inatarray.results[i].photos[0].url;
+//         inatgallery.push(inatimage);
+//         }
+//         document.getElementById("hero").style.backgroundImage = "url(" + inatgallery[0] + ")";
+//             gallery(inatgallery);
+//     })
+
+//     .catch(function (error) {
+//         console.log(error);
+//     });
+// }
+
+
