@@ -23,6 +23,10 @@ function mossFilter() {
     var ph = document.getElementById("PH").value;
     var wet = document.getElementById("WET").value;
     var gem = document.getElementById("GEM").value;
+    var tub = document.getElementById("TUB").value;
+    var bra = document.getElementById("BRA").value;
+    var lea = document.getElementById("LEA").value;
+    var bul = document.getElementById("BUL").value;
 
 
 
@@ -35,7 +39,6 @@ function mossFilter() {
                 if (dataleng < 50) { proleng = "3"; } else
                     if (dataleng < 100) { proleng = "4"; } else { proleng = "5"; }
 
-                    console.log("selected:"+leng+" data:"+x.Len+" dataleng:"+dataleng+" proleng:"+proleng);
 
 
         return (!ord || x.Ord === ord) &&
@@ -45,7 +48,14 @@ function mossFilter() {
             (!light || x.L === parseInt(light)) &&
             (!form || x.LF1 === form) &&
             (!ph || x.R === parseInt(ph)) &&
-            (!wet || x.F === parseInt(wet));
+            (!wet || x.F === parseInt(wet)) &&
+            (!lea || x.Lvs === lea) &&
+            (!bra || x.Bra === bra) &&
+            (!bul || x.Bul === bul) &&
+            (!tub || x.Tub === tub)
+            
+            
+            ;
     });
 
     page = 0;
@@ -74,7 +84,6 @@ function displayPage(i) {
 function displayFacts(i) {
     let title = mossList[i].Name_new;
     let leng = mossList[i].Len;
-    let gem = mossList[i].Gem;
     let light = mossList[i].L;
     let form = mossList[i].LF1;
     let ph = mossList[i].R;
@@ -114,24 +123,17 @@ function displayFacts(i) {
     if (bryo > 2) { hablist.push('other bryophytes'); }
     if (floating > 2) { hablist.push('water'); }
 
-    // habitatArray['soil'] = soil;
-    // habitatArray['rock'] = rock;
-    // habitatArray['rockhard'] = rockhard;
-    // habitatArray['rocksoft'] = rocksoft;
-    // habitatArray['rockworked'] = rockworked;
-    // habitatArray['trees'] = trees;
-    // habitatArray['plants'] = plants;
-    // habitatArray['gravelsand'] = gravelsand;
-    // habitatArray['peat'] = peat;
-    // habitatArray['hollowwood'] = hollowwood;
-    // habitatArray['rottingv'] = rottingv;
-    // habitatArray['rottinga'] = rottinga;
-    // habitatArray['bryo'] = bryo;
-    // habitatArray['floating'] = floating;
-
-    // console.log(habitatArray);
-
-    // habitatArray.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+    let gem = mossList[i].Gem; if (!gem) {gem="Z";};
+    let tub = mossList[i].Tub;if (!tub) {tub="Z";};
+    let lea = mossList[i].Lvs;if (!lea) {lea="Z";};
+    let bul = mossList[i].Bul;if (!bul) {bul="Z";};
+    let bra = mossList[i].Bra;if (!bra) {bra="Z";};
+    let fr = mossList[i].Fr;
+    let spbeg = mossList[i].Spbeg;
+    let spend = mossList[i].Spend;
+    let spbeg2 = mossList[i].Spbeg2;
+    let spend2 = mossList[i].Spend2;
+    let sex = mossList[i].Sex;
 
 
 
@@ -145,7 +147,13 @@ function displayFacts(i) {
     document.getElementById("wet").innerHTML = wetness(wet);
     document.getElementById("type").innerHTML = typeness(type);
     document.getElementById("habitat").innerHTML = oxford(hablist);
-    document.getElementById("gem").innerHTML = gemmaeness(gem);
+    // document.getElementById("gem").innerHTML = gemmaeness(gem);
+    document.getElementById("fr").innerHTML = frness(fr);
+    document.getElementById("beg").innerHTML = months(spbeg,spend,spbeg2,spend2);
+    document.getElementById("sex").innerHTML = sextype(sex);
+    document.getElementById("prop").innerHTML = prop(gem,tub,lea,bul,bra);
+
+
     // cleanPhrase();
 }
 
@@ -321,9 +329,73 @@ function lightness(x) {
 function gemmaeness(x) {
     if (x === "F") { word = "Gemmae are frequently found on its leaves."; } else
         if (x === "O") { word = "Gemmae are occasionally found on its leaves."; } else
-            if (x === "R") { word = "occasional"; } else { word = ""; }
+            if (x === "R") { word = "rare"; } else { word = ""; }
     return word;
 }
+
+function frness(x) {
+    if (x === "A") { word = "abundant"; } else
+    if (x === "F") { word = "frequent"; } else
+        if (x === "O") { word = "occasional"; } else
+            if (x === "R") { word = "rare"; } else { word = "unknown"; }
+    return word;
+}
+
+function months(spbeg,spend,spbeg2,spend2) {
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        if (spbeg) {   
+    let word = monthNames[spbeg-1]+" and "+monthNames[spend-1];
+    document.getElementById("season").style.display = "inline";
+    return word;
+        }
+        else
+        {
+            document.getElementById("season").style.display = "none";
+        }
+}
+
+function sextype(x) {
+    if (x === "D") { word = "the same plant"; } else
+        if (x === "D(M)") { word = "the same plant"; } else
+            if (x === "MD") { word = "the same plant"; } else 
+            if (x === "M(D)") { word = "separate plants"; } else
+            if (x === "M") { word = "separate plants"; } else { word = "Male and female parts are absent"; }
+
+    return word;
+}
+
+function prop(gem,tub,lea,bul,bra) {
+    
+    var proparray = [
+    ];
+    proparray.push({'type':'gemmae','freq':gem});
+    proparray.push({'type':'tubers','freq':tub});
+    proparray.push({'type':'leaves','freq':lea});
+    proparray.push({'type':'bulbils','freq':bul});
+    proparray.push({'type':'branches','freq':bra});
+
+
+    
+     let firstkey = proparray.sort((a, b) => a.freq > b.freq? 1 : -1);
+     console.log(firstkey);
+    if (firstkey[0].freq==="Z") {
+        document.getElementById("asex").style.display ="none";
+    }
+
+    else {
+        document.getElementById("asex").style.display ="inline";
+
+        let pfletter=firstkey[0].freq;
+        if (pfletter === "F") { propfreq = "frequently"; } else
+        if (pfletter === "O") { propfreq = "occasionally"; } else
+            if (pfletter === "R") { propfreq = "rarely"; } else { propfreq = "very rarely"; }
+        document.getElementById("propfreq").innerHTML = propfreq;
+    }
+   
+
+    return firstkey[0].type;
+}
+
 
 function formness(x) {
     switch (x) {

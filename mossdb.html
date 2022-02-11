@@ -29,7 +29,11 @@
     <div class="container">
 
         
-        <h3><span id="common"></span> is a <span id="count"></span> <span id="type"></span> found growing on <span id="habitat"></span>. It forms <span id="leng"></span> <span id="form"></span> in places which are in <span id="light"></span> and <span id="wet"></span> and <span id="ph"></span>. <span id="gem"></span></h3>
+        <h3>
+            <span id="common"></span> is a <span id="count"></span> <span id="type"></span> found growing on <span id="habitat"></span>. It forms <span id="leng"></span> <span id="form"></span> in places which are in <span id="light"></span> and <span id="wet"></span> and <span id="ph"></span>. <class id="asex">Asexual reproduction occurs <span id="propfreq"></span> by <span id="prop"></span>.</class>
+            Male and female parts are found on <span id="sex"></span> and sporophytes are <span id="fr"></span><class id="season"> and appear between <span id="beg"></span></class>.
+        
+        </h3>
         <!-- <h3 class="phrase" id="phrase"></h3> -->
         <!-- <div class="facts">
             <h3>Count: <span id="count"></span></h3>
@@ -182,6 +186,35 @@
                             <option value="O">Occasional</option>
                             <option value="R">Rare</option>
                         </select><br>
+                        <label for="TUBERS">Tubers:</label>
+                        <select id="TUB" class="filterable" onchange="mossFilter()">
+                            <option value="">All</option>
+                            <option value="F">Frequent</option>
+                            <option value="O">Occasional</option>
+                            <option value="R">Rare</option> 
+                        </select><br>
+                        <label for="BRANCH">Reproductive branches:</label>
+                        <select id="BRA" class="filterable" onchange="mossFilter()">
+                            <option value="">All</option>
+                            <option value="F">Frequent</option>
+                            <option value="O">Occasional</option>
+                            <option value="R">Rare</option>
+                        </select><br>
+                        <label for="LEAVES">Reproductive leaves:</label>
+                        <select id="LEA" class="filterable" onchange="mossFilter()">
+                            <option value="">All</option>
+                            <option value="F">Frequent</option>
+                            <option value="O">Occasional</option>
+                            <option value="R">Rare</option>
+                        </select><br>
+                        <label for="BULBILS">Bulbils:</label>
+                        <select id="BUL" class="filterable" onchange="mossFilter()">
+                            <option value="">All</option>
+                            <option value="F">Frequent</option>
+                            <option value="O">Occasional</option>
+                            <option value="R">Rare</option>
+                        </select><br>
+
                     </div><br>
                     <p>Mosses found: <span id="mossNumber"></span></p>
                 </div>
