@@ -65,6 +65,8 @@ function displayPage(i) {
     document.getElementById("common").innerHTML ="";
     document.getElementById("wiki").innerHTML = "";
     document.getElementById("gallery").innerHTML = "";
+    document.getElementById("ease").innerHTML = "";
+    document.getElementById("notes").innerHTML = "";
     document.getElementById("page").innerHTML = page + 1;
     document.getElementById("pagetotal").innerHTML = pages;
     var title = mossList[i].Name_new;
@@ -72,6 +74,7 @@ function displayPage(i) {
     // getWiki(title);
     getImages(title);
     mossNames(title);
+    mossDiff(title);
 }
 
 
@@ -475,6 +478,26 @@ function mossNames(latin) {
         if (commonname.length>0) 
             {document.getElementById("common").innerHTML = commonname[0].english;} else
             {document.getElementById("common").innerHTML = latin;}
+        })
+
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+function mossDiff(name) {
+    fetch('diff.json')
+        .then((resp) => resp.json())
+        .then(function (myJson) {
+            var diff = myJson;
+ 
+                ease = diff.filter(x => x.NAME === name); 
+
+            console.log(ease);
+
+document.getElementById("ease").innerHTML = ease[0].DIFF;
+document.getElementById("notes").innerHTML = ease[0].NOTES;
+
         })
 
         .catch(function (error) {
